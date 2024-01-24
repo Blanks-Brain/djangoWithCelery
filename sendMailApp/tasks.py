@@ -5,7 +5,7 @@ from django.core.mail import send_mail
 from start_celery import settings
 @shared_task(bind = True)
 
-def sent_mail_func(self):
+def send_mail_func(self):
     users = get_user_model().objects.all()
     for user in users:
         mail_subject = "Hi! Celery Testing"
